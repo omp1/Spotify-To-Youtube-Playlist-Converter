@@ -1,0 +1,9 @@
+/.cache
+/1.txt
+/Include
+/Lib
+/playlist_id.txt
+/progress.txt
+/pyvenv.cfg
+/Scripts
+/token.pickle
