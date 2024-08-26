@@ -40,14 +40,12 @@ Select "Desktop App", give it a name and create it
 Download the credentials.json file and replace the one provided with your downloaded one. Make sure it is in the same directory as the rest of the files
 
 ## STEP 4
-Go to the main() method and choose your playlist title and description
+Go to the main() method and choose your playlist title and description. Add the spotify playlist you'd like to convert from in the playlist_id.
 
 Run the program.
 
 On your first run, the code will create a playlist for you on YouTube and start adding songs to it until you reach your daily API quota.
 
-You will have to wait until the next day to resume adding songs to the program, **HOWEVER** before you resume, find the playlist ID you would like to resume adding onto on YouTube, and paste it into the 'playlist_id' in the main().
+You will now have a playlist_id.txt and progress.txt file as well. Change the number in the progress.txt to the index of the last song that was added. You can check this by going to YouTube and seeing how many songs were added already.
 
-You will now have a playlist_id.txt and progress.txt file as well. Change the number in the progress.txt to the index of the last song that was added. You can check this by going to YouTube and seeing how many songs were added already and subtract 1.
-
-Then you can just run the program until all your songs are fully transferred.
+Then you can just run the program until all your songs are fully transferred each day as the daily API quota refreshes.
