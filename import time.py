@@ -140,7 +140,7 @@ def resume_addition(tracks, youtube_playlist_id, start_index=0):
 
 
 def main():
-    playlist_id = '' #Playlist ID to resume adding to
+    playlist_id = '' #Spotify playlist to add from
     playlist_title = '' 
     playlist_description = 'Converted from Spotify playlist'
     progress_file = 'progress.txt'
