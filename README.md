@@ -21,7 +21,7 @@ This project bridges the gap between two major music platforms by automatically 
 ### 🧪 Step 1: Install Dependencies  
 ```bash
 pip install -r requirements.txt
-```bash
+```
 
 🛠️ Step 1: Set Up Spotify Developer Access
 Create a Spotify Developer Account.
@@ -84,7 +84,7 @@ Run the script:
 
 ```bash
 python your_script_name.py
-```bash
+```
 🔁 Handling API Quotas and Progress
 The first run will create a new playlist on YouTube and add songs until you hit your daily quota.
 
