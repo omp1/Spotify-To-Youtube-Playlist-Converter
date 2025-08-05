@@ -23,14 +23,14 @@ This project bridges the gap between two major music platforms by automatically 
 pip install -r requirements.txt
 ```
 
-🛠️ Step 1: Set Up Spotify Developer Access
-Create a Spotify Developer Account.
+🛠️ Step 2: Set Up Spotify Developer Access
+Create a Spotify Developer Account at Spotify for Developers.
 
 Click "Create an App" — values don't matter for testing.
 
 Agree to the terms and conditions.
 
-Once the app is created, go to Settings and copy the following:
+Once the app is created, go to Settings and copy:
 
 Client ID
 
