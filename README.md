@@ -1,51 +1,120 @@
-# SPOTIFY TO YOUTUBE PLAYLIST CONVERTER READ ME
-This program can be run in either a normal code environment or virtual environment
-## STEP 1
-Install all of the required packages with the following command:
-`pip install -r requirements.txt`
+# 🎵 Spotify-to-YouTube Playlist Converter
 
-## STEP 2
-Create a Spotify Developer Account and go to the Developer Dashboard
+A Python-based automation tool that transfers Spotify playlists to YouTube Music using the Spotify and YouTube Data APIs.
 
-Go to "Create an App". (Values given here do not matter)
+This project bridges the gap between two major music platforms by automatically locating and recreating a Spotify playlist on your YouTube account. The program searches for each track on YouTube and adds it to a newly created YouTube playlist with minimal manual input.
 
-Agree to terms and conditions.
+---
 
-After creating the app, access your Client ID and access your Client Secret through the app settings.
+## ⚙️ Features
 
-In the vars.env and credentials.json file, paste your respective ID's into them. 
+- 🔄 Transfers entire Spotify playlists to YouTube Music  
+- 🔍 Automatically searches for each song on YouTube  
+- ✅ Handles progress tracking and API quota limits  
+- 🗂️ Supports OAuth2.0 authentication for both platforms  
+- 💾 Resumes from last progress using `progress.txt`
 
-**--DO NOT SHARE YOUR CLIENT SECRET ID ANYWHERE ELSE--**
+---
 
-## STEP 3
-Visit Google Cloud Console and select "New Project" from the dropdown in the top left
+## 📦 Setup Instructions
 
-Name your project and create it.
-
-Go to "APIs & Services" to "Library"
-
-Search for "YouTube Data API v3" and click it and then Enable it
-
-Go back to Google Cloud Console, go to "APIs & Services" to "Credentials."
+### 🧪 Step 1: Install Dependencies  
+```bash
+pip install -r requirements.txt
 
 
-Click on "Create Credentials" and choose "OAuth 2.0 Client ID."
+🛠️ Step 1: Set Up Spotify Developer Access
+Create a Spotify Developer Account.
 
-Choose "External" user type, rest of the values do not matter
+Click "Create an App" — values don't matter for testing.
 
-Go back to "Credentials" and choose "OAuth 2.0 Client ID."
+Agree to the terms and conditions.
 
-Select "Desktop App", give it a name and create it
+Once the app is created, go to Settings and copy the following:
 
-Download the credentials.json file and replace the one provided with your downloaded one. Make sure it is in the same directory as the rest of the files
+Client ID
 
-## STEP 4
-Go to the main() method and choose your playlist title and description. Add the spotify playlist you'd like to convert from in the playlist_id.
+Client Secret
 
-Run the program.
+Open the vars.env and credentials.json files and paste the respective values:
 
-On your first run, the code will create a playlist for you on YouTube and start adding songs to it until you reach your daily API quota.
+SPOTIPY_CLIENT_ID=...
 
-You will now have a playlist_id.txt and progress.txt file as well. Change the number in the progress.txt to the index of the last song that was added. You can check this by going to YouTube and seeing how many songs were added already.
+SPOTIPY_CLIENT_SECRET=...
 
-Then you can just run the program until all your songs are fully transferred each day as the daily API quota refreshes.
+⚠️ Do not share your client secret publicly.
+
+🎬 Step 2: Enable YouTube Data API
+Visit Google Cloud Console.
+
+Click the dropdown in the top-left and select "New Project".
+
+Name the project and click "Create".
+
+Go to APIs & Services → Library.
+
+Search for YouTube Data API v3 → Click it → Click Enable.
+
+Now go to APIs & Services → Credentials.
+
+Click Create Credentials → OAuth 2.0 Client ID.
+
+For user type, select External, then continue.
+
+Go back to Credentials, and click OAuth 2.0 Client ID again.
+
+Select Desktop App, give it a name, and click Create.
+
+Download the credentials.json file.
+
+Replace the existing credentials.json in your project directory with the new one.
+
+🎵 Step 3: Configure Playlist and Run
+Open the main() method in your script.
+
+Update:
+
+Your desired playlist title
+
+Your playlist description
+
+The playlist_id of the Spotify playlist you'd like to convert
+
+Run the script:
+
+bash
+Copy
+Edit
+python your_script_name.py
+🔁 Handling API Quotas and Progress
+The first run will create a new playlist on YouTube and add songs until you hit your daily quota.
+
+After running once, two files will be generated:
+
+playlist_id.txt: stores the new YouTube playlist ID
+
+progress.txt: stores the index of the last added song
+
+To resume where you left off:
+
+Look at your YouTube playlist to see how many songs were added
+
+Update the number in progress.txt to the index of the last added song
+
+Run the script again the next day (after the daily API quota resets)
+
+📂 File Overview
+main.py – main script for execution
+
+credentials.json – Google OAuth2 credentials
+
+vars.env – environment variables for Spotify API
+
+requirements.txt – required Python packages
+
+playlist_id.txt – stores the YouTube playlist ID after creation
+
+progress.txt – keeps track of how far the script progressed
+
+⚠️ Disclaimer
+This tool is intended for educational or personal use only. Make sure you comply with Spotify and YouTube's terms of service
